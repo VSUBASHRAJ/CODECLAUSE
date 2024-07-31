@@ -1,0 +1,151 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ffffff;
+    overflow: hidden; /* Hide overflow to prevent scrollbar */
+    background: linear-gradient(to top, #87CEEB, #fff); /* Sky background */
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative; /* To position clouds within container */
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+}
+
+.cloud::after, .cloud::before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.cloud1 {
+    width: 100px;
+    height: 60px;
+    top: 20%;
+    left: -200px; /* Start off screen */
+    animation: moveClouds 60s linear infinite;
+}
+
+.cloud1::after {
+    width: 80px;
+    height: 50px;
+    top: -30px;
+    left: 20px;
+}
+
+.cloud1::before {
+    width: 50px;
+    height: 30px;
+    top: 10px;
+    right: -30px;
+}
+
+.cloud2 {
+    width: 150px;
+    height: 90px;
+    top: 50%;
+    left: -300px; /* Start off screen */
+    animation: moveClouds 80s linear infinite;
+}
+
+.cloud2::after {
+    width: 100px;
+    height: 60px;
+    top: -40px;
+    left: 30px;
+}
+
+.cloud2::before {
+    width: 70px;
+    height: 40px;
+    top: 20px;
+    right: -40px;
+}
+
+@keyframes moveClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(150vw); } /* Move to the far right */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #0f16cece;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 200px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #ff7e5f;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #eb6b53;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.weather-card h2 {
+    margin-top: 0;
+    color: rgb(13, 13, 174);
+}
+
+.weather-card p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: rgb(13, 13, 174);
+}
